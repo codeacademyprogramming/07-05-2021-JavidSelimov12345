@@ -1,0 +1,41 @@
+.container {
+  margin: auto;
+  width: 50%;
+}
+.mato {
+  background-color: rgb(218, 195, 195);
+  text-align: center;
+  color: white;
+
+  padding: 5px;
+  margin: 5px;
+  width: 100%;
+  margin: 10px;
+  border: 1px solid black;
+  transition: all 0.5s ease-in-out;
+}
+.mato:hover {
+  background-color: blueviolet;
+}
+#modal {
+  background-color: rgba(121, 133, 133, 0.982);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5000px;
+  width: 100%;
+  display: none;
+  text-align: center;
+}
+.cont {
+  padding: 10px;
+  background-color: antiquewhite;
+  color: black;
+  border: 1px solid black;
+  margin: 10px;
+  width: 50%;
+  margin-left: calc((51%-30px) / 2);
+}
+.titles {
+  text-align: center;
+}
