@@ -24,11 +24,30 @@ function LoadUserComponent(obj) {
     let ContainerForCredit = document.createElement("div");
     ContainerForCredit.classList.add("cont");
     let loanerComp = document.createElement("div");
+    loanerComp.classList.add("alert-primary");
+    loanerComp.classList.add("alert");
     let amountComp = document.createElement("p");
+    amountComp.classList.add("alert-secondary");
+    amountComp.classList.add("alert");
     let isActiveComp = document.createElement("p");
+
+    isActiveComp.classList.add("alert-success");
+    isActiveComp.classList.add("alert");
+
     let MonthlyPayComp = document.createElement("div");
+
+    MonthlyPayComp.classList.add("alert-info");
+    MonthlyPayComp.classList.add("alert");
+
     let DuemontComp = document.createElement("div");
+
+    DuemontComp.classList.add("alert-light");
+    DuemontComp.classList.add("alert");
+
     let StartEnd = document.createElement("div");
+
+    StartEnd.classList.add("alert-warning");
+    StartEnd.classList.add("alert");
 
     let loaner = loan.loaner;
     let amount = loan.amount.value;
@@ -79,11 +98,30 @@ function ActiveCredits(obj) {
         let ContainerForCredit = document.createElement("div");
         ContainerForCredit.classList.add("cont");
         let loanerComp = document.createElement("div");
+        loanerComp.classList.add("alert-primary");
+        loanerComp.classList.add("alert");
         let amountComp = document.createElement("p");
+        amountComp.classList.add("alert-secondary");
+        amountComp.classList.add("alert");
         let isActiveComp = document.createElement("p");
+
+        isActiveComp.classList.add("alert-success");
+        isActiveComp.classList.add("alert");
+
         let MonthlyPayComp = document.createElement("div");
+
+        MonthlyPayComp.classList.add("alert-info");
+        MonthlyPayComp.classList.add("alert");
+
         let DuemontComp = document.createElement("div");
+
+        DuemontComp.classList.add("alert-light");
+        DuemontComp.classList.add("alert");
+
         let StartEnd = document.createElement("div");
+
+        StartEnd.classList.add("alert-warning");
+        StartEnd.classList.add("alert");
 
         let loaner = loan.loaner;
         let amount = loan.amount.value;
@@ -138,6 +176,7 @@ function CreditAccaunts(obj) {
     let container = document.createElement("div");
     container.classList.add("mato");
     let name = document.createElement("p");
+
     name.classList.add("h3");
     name.innerText = ` ${user.name} ${user.surname}`;
     let image = document.createElement("img");
@@ -149,7 +188,7 @@ function CreditAccaunts(obj) {
     let loanclosed = document.createElement("div");
     loanclosed.classList.add("bg-danger");
     let monthlyPay = document.createElement("div");
-    monthlyPay.classList.add("bg-warning");
+    monthlyPay.classList.add("bg-secondary");
     let vla = 0;
     let canApplyLoan = document.createElement("div");
 
@@ -189,11 +228,26 @@ function CreditAccaunts(obj) {
     container.addEventListener("click", function () {
       modal.style.display = "block";
       modal.innerHTML = "";
+      let cont = document.createElement("div");
+      cont.classList.add("cont");
+
       let search = document.createElement("input");
+
+      search.classList.add("form-control");
+      search.placeholder =
+        "Search by name or surname...(Please after typing click enter)";
+
+      closeModal.classList.add("btn");
+      closeModal.classList.add("btn-warning");
+
       let aktiv = document.createElement("button");
+      aktiv.classList.add("btn");
+      aktiv.classList.add("btn-info");
+      aktiv.classList.add("but");
       aktiv.innerText = "Aktiv kreditler";
 
-      modal.appendChild(search);
+      modal.appendChild(cont);
+      cont.appendChild(search);
       modal.appendChild(aktiv);
       modal.appendChild(closeModal);
 
@@ -207,13 +261,12 @@ function CreditAccaunts(obj) {
             let val = search.value.trim().toUpperCase();
 
             obj.map((user) => {
-              if (val === user.name.toUpperCase()||val ===user.surname.toUpperCase()) {
+              if (
+                val === user.name.toUpperCase() ||
+                val === user.surname.toUpperCase()
+              ) {
                 LoadUserComponent(user);
-              
               }
-
-             
-            
             });
           }
         }
@@ -244,7 +297,5 @@ function CreditAccaunts(obj) {
         LoadUserComponent(user);
       });
     });
-
-    
   });
 }
